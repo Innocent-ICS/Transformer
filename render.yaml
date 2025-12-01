@@ -4,7 +4,8 @@ services:
     env: docker
     region: oregon
     plan: free
-    rootDir: backend
+    rootDir: .
+    dockerfilePath: backend/Dockerfile
     dockerContext: .
     envVars:
       - key: PYTHON_VERSION

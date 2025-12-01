@@ -15,11 +15,17 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install python dependencies
-COPY requirements.txt .
+# Install python dependencies
+COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy project
-COPY . .
+# Copy project files preserving structure
+COPY backend /app/backend
+COPY model.py /app/model.py
+COPY text_data.py /app/text_data.py
+
+# Set work directory to backend for uvicorn
+WORKDIR /app/backend
 
 # Expose port
 EXPOSE 8000
