@@ -1,0 +1,22 @@
+\chapter{Discussion}
+\label{ch:discussion}
+
+\section{Interpretation of Results}
+
+The 13-fold accuracy improvement and 85.9\% CTC loss reduction demonstrate that attention mechanisms substantially enhance ASR performance. Attention enables dynamic focus on relevant encoder outputs, provides direct gradient pathways mitigating vanishing gradients, and increases model capacity. The training dynamics support this: while Vanilla RNN plateaued at epoch 10, the attention model continued improving through epoch 50, with a breakthrough at epoch 25--30.
+
+Despite relative improvements, absolute accuracy remains low ($<$2\%) due to the challenging task: medical/technical domain, limited Shona training data, constrained architecture (single layer, 128 hidden units), and low-resource language characteristics. The 100\% WER indicates neither model learned complete word production.
+
+\section{Limitations}
+
+\textbf{Computational Constraints.} The original plan evaluated six architectures (Vanilla RNN, LSTM, GRU, each with/without attention). Resource limitations restricted completion to only two Vanilla RNN variants. Each experiment required 2--2.5 hours on available hardware (8GB RAM, CPU-only); completing all six would require 12--15 hours continuous computation, exceeding available resources. LSTM and GRU architectures with gating mechanisms were expected to outperform Vanilla RNN but remain untested.
+
+\textbf{Architecture Constraints.} The single-layer, 128-unit design accommodated limited RAM but constrained representational capacity. Deeper, wider networks would improve performance but require more resources.
+
+\section{Future Work}
+
+\textbf{Complete Architecture Evaluation.} The immediate priority is evaluating the remaining four architectures (LSTM, LSTM+attention, GRU, GRU+attention). The modular system already supports these, requiring only execution time.
+
+\textbf{Deployment Strategy.} Three-phase plan: (1) Model enhancement---increase capacity to 2--3 layers and 256--512 units, implement learning rate scheduling, train 100+ epochs; (2) Advanced architectures---explore transformers, transfer learning, and pre-trained models (Wav2Vec 2.0, Whisper); (3) Production system---develop REST API, web interface, and cloud deployment with GPU support.
+
+\textbf{Research Extensions.} Investigate alternative attention mechanisms, semi-supervised learning, data augmentation, and multilingual transfer learning for low-resource African languages.

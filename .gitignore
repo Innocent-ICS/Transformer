@@ -84,3 +84,4 @@ test_audio.*
 *.wav
 *.webm
 create_dummy_wav.py
+*.tar.gz
