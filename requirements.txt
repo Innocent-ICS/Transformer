@@ -1,0 +1,16 @@
+torch
+torchaudio
+torchvision
+transformers
+datasets
+accelerate
+librosa
+soundfile
+wandb
+jiwer
+sacrebleu
+python-dotenv
+scikit-learn
+pandas
+tqdm
+numpy
