@@ -5,7 +5,7 @@ services:
     region: oregon
     plan: free
     rootDir: backend
-    dockerContext: backend
+    dockerContext: .
     envVars:
       - key: PYTHON_VERSION
         value: 3.10.0
