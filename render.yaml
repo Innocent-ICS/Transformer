@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: transformer-backend
+    env: docker
+    region: oregon
+    plan: free
+    rootDir: backend
+    dockerContext: backend
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: JWT_SECRET_KEY
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
