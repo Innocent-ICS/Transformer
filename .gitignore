@@ -62,7 +62,7 @@ checkpoints/
 *.safetensors
 whisper-asr-shona*/
 whisper-small-asr-shona-lora/
-models/
+/models/
 
 # Logs and Debug Output
 *.log
