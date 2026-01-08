@@ -85,3 +85,10 @@ test_audio.*
 *.webm
 create_dummy_wav.py
 *.tar.gz
+
+# Explicit Project Exclusions
+data/
+saved_models/
+Writing/
+results/
+legacy/
